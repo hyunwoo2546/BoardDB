@@ -37,7 +37,7 @@
 		DELETE FROM MP_REPLY
 		WHERE RNO = #{rno}
 	</delete>
-	
+	 
 	<!-- # 선택된 댓글 조회 -->
 	<select id="selectReply" resultType="com.hyun.vo.ReplyVO">
 		SELECT
