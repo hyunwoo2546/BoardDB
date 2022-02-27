@@ -11,7 +11,7 @@
     	 FROM MP_REPLY
     	WHERE BNO = #{bno}
 	</select>
-
+ 
 	<!-- # ´ñ±Û ÀÛ¼º -->
 	<insert id="writeReply">
 	INSERT INTO MP_REPLY(
