@@ -1,3 +1,4 @@
+-- 이클립스 xml 파일
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper
   PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
@@ -11,7 +12,7 @@
     	 FROM MP_REPLY
     	WHERE BNO = #{bno}
 	</select>
- 
+
 	<!-- # 댓글 작성 -->
 	<insert id="writeReply">
 	INSERT INTO MP_REPLY(
@@ -37,7 +38,7 @@
 		DELETE FROM MP_REPLY
 		WHERE RNO = #{rno}
 	</delete>
-	 
+	
 	<!-- # 선택된 댓글 조회 -->
 	<select id="selectReply" resultType="com.hyun.vo.ReplyVO">
 		SELECT
@@ -51,3 +52,16 @@
 	</select>
 	
 </mapper>
+
+
+
+
+
+
+
+
+
+
+
+
+

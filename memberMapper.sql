@@ -28,16 +28,36 @@ CREATE TABLE MP_MEMBER (
 	
 	<!-- # 로그인 -->
 	<select id="login" resultType="com.hyun.vo.MemberVO">
-		SELECT USERID, USERPASS
-		FROM MP_MEMBER
-		WHERE USERID = #{userId} AND USERPASS = #{userPass}
+		SELECT USERID, USERPASS, USERNAME
+		  FROM MP_MEMBER
+		 WHERE USERID = #{userId}
+		  <!-- AND USERPASS = #{userPass} -->
 	</select>
 	
 	<!-- # 회원정보 수정 -->
 	<update id="memberUpdate">
-		UPDATE MP_MEMBER SET
-		USERPASS = #{userPass},
-		USERNAME = #{userName)
+		UPDATE MP_MEMBER 
+		SET 
+		USERNAME = #{userName}
 		WHERE USERID = #{userId}
 	</update>
+	
+	<!-- # 회원 탈퇴 -->
+	<delete id="memberDelete">
+		DELETE FROM MP_MEMBER
+		WHERE USERID = #{userId}
+	</delete>
+	
+	<!-- # 패스워드 체크 -->
+	<select id="passChk" resultType="int">
+		SELECT COUNT(*) FROM MP_MEMBER
+		WHERE USERID = #{userId}
+		AND USERPASS = #{userPass}
+	</select>
+	
+	<!-- # 아이디 중복 체크 -->
+	<select id="idChk" resultType="int">
+		SELECT COUNT(*) FROM MP_MEMBER
+		WHERE USERID = #{userId}
+	</select>
 </mapper>
